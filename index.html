@@ -5,12 +5,33 @@
   <meta charset="UTF-8">
   <title>Key Sequence Detection (KONAMI CODE)</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 
 <body>
-
+  <div class="main-content">
+    <p class="enter">Enter the Konami code</p>
+    <img id="contra" src="https://orig00.deviantart.net/bfd8/f/2010/276/f/4/contra_hard_corps_ending_fang_by_captainveemon-d2zyza1.jpg" alt="Good Job!">
+  </div>
   <script>
-
+    const image = document.getElementById('contra');
+    isVisable = false;
+    const pressedArr = [];
+    const code = 'ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightba'; // ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"] 
+    const codeLength = 10;
+    window.addEventListener('keyup', (e) => {
+      pressedArr.push(e.key);
+      pressedArr.splice(-codeLength - 1, pressedArr.length - codeLength);
+      if(pressedArr.join('').includes(code)) {
+        if (isVisable) {
+          image.style.display='none';
+        }
+        else {
+          image.style.display='block';
+        }
+        isVisable = !isVisable;
+      }
+    });
   </script>
 </body>
 

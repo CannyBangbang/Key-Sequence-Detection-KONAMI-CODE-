@@ -1,0 +1,14 @@
+html, body {
+  background-color: #000000;
+  color: white;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+}
+.enter {
+  margin-top: 20vh;
+  margin-bottom: 30px;
+}
+img {
+  display: none;
+  margin: 0 auto;
+}
